@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.toolbox.NetworkImageView
 import com.google.codelabs.mdc.kotlin.shrine.network.ImageRequester
@@ -27,6 +28,7 @@ class ProductCardRecyclerViewAdapter(private val productList: List<ProductEntry>
             holder.productTitle.text = product.title
             holder.productPrice.text = product.price
             ImageRequester.setImageFromUrl(holder.productImage, product.url)
+            holder.bind(productList[position])
         }
     }
 
